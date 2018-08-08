@@ -1,0 +1,21 @@
+name: devos
+version: 0.1
+summary: Device Operation System.
+description: |
+   Device Operation System.
+
+grade: stable #devel
+confinement: strict #devmode
+
+parts:
+  devos:
+#    plugin: copy
+#    files: 
+#     ./bin/devos: bin/devos
+    source: .
+    plugin: go
+    go-importpath: devosd
+
+apps:
+  devos:
+    command: devosd
